@@ -13,7 +13,7 @@
     <tbody>
       <tr>
       <% @animes.each do |anime| %>
-          <td><%= @num += 1 %></td>
+          <td id="number"><span class="nth"><%= @num += 1 %></span></td>
           <td><%= anime.title %></td>
           <td><%= anime.grade %></td>
           <td><%= link_to 'Show', anime%></td>

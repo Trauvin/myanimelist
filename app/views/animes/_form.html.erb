@@ -1,31 +1,35 @@
 <%= form_with(model: anime, local: true) do |form| %>
   <% if anime.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(anime.errors.count, "error") %> prohibited this anime from being saved:</h2>
-
-      <ul>
-        <% anime.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="message is-warning">
+      <div class="message-header">
+        <h2><%= pluralize(anime.errors.count, "error") %> prohibited this book from being saved:</h2>
+      </div>
+      <div class="message is-body">
+        <ul>
+          <% anime.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "label"%>
+    <%= form.text_field :title, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :grade %>
-    <%= form.text_field :grade %>
+    <%= form.label :grade, class: "label" %>
+    <%= form.text_field :author, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :resume %>
-    <%= form.text_area :resume %>
+    <%= form.label :resume, class: "label" %>
+    <%= form.text_area :resume, class: "textarea", placeholder:"Escreva um breve resumo...", rows:"10"%>
   </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-success"%>
   </div>
 <% end %>

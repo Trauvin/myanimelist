@@ -1,28 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<%= content_for :title do %>
   <%= @anime.title %>
-</p>
+<% end %>
 
-<p>
-  <strong>Grade:</strong>
-  <%= @anime.grade %>
-</p>
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
 
-<p>
-  <strong>Resume:</strong>
-  <%= @anime.resume %>
-</p>
+    <div class="panel-control">
+      <strong>Nota:</strong>
+      <%= @anime.grade %>
+    </div>
 
-<p>
-  <strong>Num:</strong>
-  <%= @anime.num %>
-</p>
-
-<%= link_to 'Edit', edit_anime_path(@anime) %> |
-<%= link_to 'Back', animes_path %> |
-<%= link_to 'Delete', anime_path(@anime), method: :delete, date: { confirm: "Are you sure?" } %>
-
-
-
+    <div class="panel-control"> 
+      <strong>Resumo:</strong>
+      <%= @anime.resume %>
+    </div><br>
+    <div id="back_button" class="button is-white">
+      << <%= link_to 'Voltar', animes_path %>
+    </div>
+    <%= link_to 'Editar', edit_anime_path(@anime), class: "button is-link is-light" %>
+    <%= link_to 'Excluir', anime_path(@anime), 
+        method: :delete, date: {confirm: "Are you sure?"}, 
+        class: "button is-danger is-light" %>
+  </div>
+  
+  
+</div>

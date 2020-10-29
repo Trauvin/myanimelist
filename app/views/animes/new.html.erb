@@ -1,5 +1,10 @@
-<h1>New Anime</h1>
 
-<%= render 'form', anime: @anime %>
+<div class="columns is-centered mt-6">
+    <div class="column is-one-third">
+        <h1 class="is-size-2 has-text-weight-bold mb-3">Novo Review</h1>
+        <%= render 'form', anime: @anime %>
+    </div>
+</div>
+
 
 <%= link_to 'Back', animes_path %>
