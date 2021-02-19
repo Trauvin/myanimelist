@@ -5,8 +5,8 @@ class AnimesController < ApplicationController
   # GET /animes.json
   def index
     @animes = Anime.all
-    @animes = Anime.order("grade DESC").all
-    @num = Anime.order("num DESC").all
+    # lista todos as notas de forma decrescente
+    @animes = Anime.order('grade DESC').all
     @num = 0
 
   end
